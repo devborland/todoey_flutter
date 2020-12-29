@@ -40,10 +40,11 @@ class AddTaskScreen extends StatelessWidget {
               minWidth: double.maxFinite,
               color: Colors.lightBlueAccent,
               onPressed: () {
-                Provider.of<TaskData>(context, listen: false)
-                    .addTask(newTaskTitle);
+                if (newTaskTitle != '' && newTaskTitle != null) {
+                  Provider.of<TaskData>(context, listen: false)
+                      .addTask(newTaskTitle);
+                }
                 Navigator.pop(context);
-                print('close modal widget');
               },
               child: Text(
                 'Add',

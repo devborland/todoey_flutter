@@ -4,11 +4,18 @@ class TaksTile extends StatelessWidget {
   final bool isChecked;
   final String taskTitle;
   final Function checkboxCallback;
-  TaksTile({this.isChecked, this.taskTitle, this.checkboxCallback});
+  final Function longPressCallback;
+
+  TaksTile(
+      {this.isChecked,
+      this.taskTitle,
+      this.checkboxCallback,
+      this.longPressCallback});
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      onLongPress: longPressCallback,
       title: Text(
         taskTitle,
         style: TextStyle(
