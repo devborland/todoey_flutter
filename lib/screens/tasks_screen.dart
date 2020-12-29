@@ -15,11 +15,7 @@ class TasksScreen extends StatelessWidget {
         onPressed: () {
           showModalBottomSheet(
             context: context,
-            builder: (context) => AddTaskScreen((newTaskTitle) {
-              // setState(() {
-              //   tasks.add(Task(name: newTaskTitle));
-              // });
-            }),
+            builder: (context) => AddTaskScreen(),
           );
         },
       ),
@@ -54,7 +50,7 @@ class TasksScreen extends StatelessWidget {
                       fontWeight: FontWeight.w700),
                 ),
                 Text(
-                  '${Provider.of<TaskData>(context).tasks.length} tasks',
+                  '${Provider.of<TaskData>(context).tasksCount} tasks',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 18.0,
